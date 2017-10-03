@@ -1,0 +1,44 @@
+{% extends "base.html"%}
+{% load staticfiles %}
+{% block content %}
+
+<h1>SHORT WIKI</h1><hr>
+<h2>Find a Short Wiki on anything!!</h2><br>
+<img src="/static/background.jpg">
+
+    <form name="myform" method="POST" action="{% url 'result' %}">  
+    <div class="form-group">
+     <div class="input-group">
+            {% csrf_token %}
+        <input type="text" class="form-control" name="textfield" placeholder="Search" required />
+        <div class="input-group-addon">
+        <span class="glyphicon glyphicon-search"></span>
+      
+        </div>
+    </div>
+    </div>
+
+    <button type="submit" class="btn btn-danger btn-lg ">Search</button>
+    </form> 
+   <!-- <a href="{% url 'result' %}" type="button"  class="btn btn-danger btn-lg ">Search</a>-->
+
+{% endblock %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

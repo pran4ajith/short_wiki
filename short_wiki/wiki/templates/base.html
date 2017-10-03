@@ -1,0 +1,153 @@
+{%load staticfiles %}
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>  
+        <meta charset="utf-8">
+        <title>Short Wiki</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <style>
+
+       body {
+    margin: 0;
+    height: 100%;
+  background-image: url("https://s3.amazonaws.com/StartupStockPhotos/uploads/13.jpg");
+
+}
+footer { 
+    display: block;
+}
+
+#bg{
+  
+  
+  padding: 70px 90px 120px 90px;
+}
+#search-bg{
+  
+  background-position: center top;
+  
+  padding: 70px 90px 120px 90px;
+}
+ #search-bg{
+background-image: url('https://s3.amazonaws.com/StartupStockPhotos/uploads/13.jpg');
+background-size: 1080px auto;
+background-repeat: none;
+ }
+
+#search-container {
+  position: relative;
+}
+#search-bg {
+  background-repeat: none;
+  position: absolute;
+  top: 10px;
+  right: 5px;
+  bottom: 0px;
+  left: 5px;
+  z-index: 99;
+
+  /* Pull the background 70px higher to the same place as #bg's */
+  background-position: center -70px;
+
+  -webkit-filter: blur(10px);
+  filter: url('/media/blur.svg#blur');
+  filter: blur(10px);
+}
+
+#search {
+
+  position: relative;
+  z-index: 100;
+  padding: 20px;
+  background: rgb(34,34,34); /* for IE */
+  background: rgba(34,34,34,0.75);
+}
+
+ 
+@media (max-width: 600px ) {
+  #bg { padding: 10px; }
+  #search-bg { background-position: center -10px; }
+}
+#search h1{
+    font-family: " monospace";/*Lucida Console", Monaco, monospace*/
+    font-size: 40px;
+    color: #fefefe;
+    text-align: center;
+    font-weight: normal;
+    margin-bottom: 50px;
+}
+#search h2
+{
+  font-family: " monospace";
+  color: #fefefe;
+  font-weight: normal;
+  text-align: center;
+}
+#search p{
+  font-size: 22px;
+  color:#000;
+  font-weight: bold;
+  font-family: "calibri";
+  text-align: justify;
+}
+
+
+.creator{
+    padding: 20px;
+    text-align: center; color: #fefefe; font-weight: normal;
+
+}
+#footer{
+    background-color: #333;
+            width: 100%;
+            bottom: 0;
+            height: 70px;
+            position: fixed;
+
+}
+
+    </style>
+</head>
+
+<body>
+<div class="container-fluid bg-1 text-center">
+<div id="bg">
+    <div id="search-container">
+        <div id ="search-bg"></div>
+        <div id ="search">
+        {% block content %}
+        {% endblock content %}
+        
+        </div>
+
+    </div>
+
+</div>
+
+</div>
+
+<footer class="container-fluid text-center" id ="footer">
+    
+<div class="container-fluid">
+        
+  <a href="https://github.com/pran4ajith" title="github">
+    
+  <p class ='creator'>Pranav Ajith <i class="fa fa-github" style="font-size:24px"></i></p></a>
+ 
+</div>
+</footer>
+
+
+
+</body>
+
+
+</html>
+
