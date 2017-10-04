@@ -53,15 +53,16 @@ def result_view(request):
 
 
 '''
-
 def result_view(request):
     if request.method == 'POST':
         search= request.POST.get('textfield') 
+        if search == None:
+            return redirect("/")
         
         print search
         try:
             try:
-                value = wikipedia.page(search)
+                value = wikipedia.page(search.encode('utf-8'))
                 title= value.title
                 url=value.url
                 print title
