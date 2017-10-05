@@ -68,7 +68,7 @@ def result_view(request):
 
             except wikipedia.exceptions.DisambiguationError as e:
                 data = e
-                title="Disambiguation"
+                title=search+" (Disambiguation)"
                 u = search.replace(" ", "_")
                 url = "https://en.wikipedia.org/wiki/"+u
 

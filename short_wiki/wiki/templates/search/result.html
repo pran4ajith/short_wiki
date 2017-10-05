@@ -2,7 +2,7 @@
 {% block content %}
 
   <h1>SHORT WIKI</h1><hr>
-  <h2>{{title}}</h2>
+  <h2>{{title|capfirst}}</h2>
   <div class="container-fluid panel-container ">
     <div class="panel panel-default">
       <div class="panel-body">
@@ -17,4 +17,15 @@
 
     <a href="{% url 'index' %}" type="button"  class="btn btn-danger btn-lg ">Search Again</a>
 
+{% endblock %}
+{% block icontent %}
+<footer id ="footer">
+  <div>
+<p class ='creator' style="padding-top: 10px;">
+  <a href="https://github.com/pran4ajith" title="github" style="color: white;">
+    
+  Pranav Ajith <i class="fa fa-github" style="font-size:24px"></i></a><br>Attribution: <a href="https://en.wikipedia.org/wiki/Main_Page">Wikipedia</a>. Content under <a href="https://en.wikipedia.org/wiki/Wikipedia:Text_of_Creative_Commons_Attribution-ShareAlike_3.0_Unported_License" style="color: white;"><u>Creative Commons Attribution-ShareAlike 3.0 Unported License</u></a></p>
+  
+ </div>
+</footer>
 {% endblock %}

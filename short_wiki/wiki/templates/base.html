@@ -4,6 +4,7 @@
 <html lang="en">
     <head>  
         <meta charset="utf-8">
+        <meta name="google-site-verification" content="1MuwtdhTf7kX2K1vMl-_NHG3uYJxVLe4WZgER_DgdkU" />
         <title>Short Wiki</title>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -14,7 +15,7 @@
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
         <style>
 
-       body {
+       html, body {
     margin: 0;
     height: 100%;
   background-image: url("https://s3.amazonaws.com/StartupStockPhotos/uploads/13.jpg");
@@ -28,6 +29,13 @@ footer {
   
   
   padding: 70px 90px 120px 90px;
+}
+.bg-1{
+  min-height: 100%;
+  margin-bottom: -70px; /* Equivalent to footer's height */
+    padding-bottom: 70px; /* Equivalent to footer's height */
+
+
 }
 #search-bg{
   
@@ -62,6 +70,7 @@ background-repeat: none;
 }
 
 #search {
+
 
   position: relative;
   z-index: 100;
@@ -102,7 +111,7 @@ background-repeat: none;
 }
 
 .creator{
-    padding: 20px;
+   padding-top: 20px;
     text-align: center; color: #fefefe; font-weight: normal;
 
 }
@@ -111,7 +120,9 @@ background-repeat: none;
             width: 100%;
             bottom: 0;
             height: 70px;
-            position: fixed;
+            position: relative;
+            overflow: auto;
+
 
 }
 .panel-container{
@@ -119,10 +130,10 @@ background-repeat: none;
 }
 
 /*
-@media screen and (min-width: 768px) {
+@media screen and (max-width: 768px) {
   #search h2
 {
-  font-family: " calibri";
+  font-family: " monaco";
   color: #fefefe;
   font-weight: normal;
   text-align: center;
@@ -143,8 +154,9 @@ background-repeat: none;
 }
 
 }
-  
 */
+  
+
 
     </style>
 
@@ -166,17 +178,8 @@ background-repeat: none;
 </div>
 
 </div>
-
-<footer class="container-fluid text-center" id ="footer">
-    
-<div class="container-fluid">
-        
-  <a href="https://github.com/pran4ajith" title="github">
-    
-  <p class ='creator'>Pranav Ajith <i class="fa fa-github" style="font-size:24px"></i></p></a>
- 
-</div>
-</footer>
+{% block icontent %}
+{% endblock icontent %}
 
 
 
