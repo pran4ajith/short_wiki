@@ -6,20 +6,21 @@
 <h2>Find a Short Wiki on anything!!</h2><br>
 
 
-    <form name="myform" method="POST" action="{% url 'result' %}">  
+    <form name="myform" method="POST" action="{% url 'result' %}">
     <div class="form-group">
-     <div class="input-group">
+        <div class="input-group">
             {% csrf_token %}
-        <input type="text" class="form-control" name="textfield" placeholder="Search" required />
-        <div class="input-group-addon">
-        <span class="glyphicon glyphicon-search"></span>
-      
+            <input type="text" class="form-control" name="textfield" placeholder="Search" required/>
+            <div class="input-group-addon">
+                <span class="glyphicon glyphicon-search"></span>
+
+            </div>
         </div>
-    </div>
     </div>
 
     <button type="submit" class="btn btn-danger btn-lg ">Search</button>
-    </form> 
+</form> 
+
    <!-- <a href="{% url 'result' %}" type="button"  class="btn btn-danger btn-lg ">Search</a>-->
 
 {% endblock %}

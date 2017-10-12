@@ -55,28 +55,28 @@ def result_view(request):
 '''
 def result_view(request):
     if request.method == 'POST':
-        search= request.POST.get('textfield').encode("utf-8")
-        
+        search = request.POST.get('textfield').encode("utf-8")
         print search
+
         try:
             try:
                 value = wikipedia.page(search)
-                title= value.title
-                url=value.url
+                title = value.title
+                url = value.url
                 print title
-                data= wikipedia.summary(search, sentences=10)
+                data = wikipedia.summary(search, sentences=10)
 
             except wikipedia.exceptions.DisambiguationError as e:
                 data = e
-                title=search+" (Disambiguation)"
+                title = search + " (Disambiguation)"
                 u = search.replace(" ", "_")
-                url = "https://en.wikipedia.org/wiki/"+u
+                url = "https://en.wikipedia.org/wiki/" + u
 
         except:
             raise Http404()
-                
-        return render(request,"search/result.html",{'title':title,'url':url,'data':data})
+
+        return render(request, "search/result.html", {'title': title, 'url': url, 'data': data})
 
     else:
-        return render(request,"search/result.html",{})
+        return render(request, "search/result.html", {})
 
