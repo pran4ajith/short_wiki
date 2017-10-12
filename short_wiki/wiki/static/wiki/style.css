@@ -4,6 +4,7 @@
   /*  
   background-image: url("https://s3.amazonaws.com/StartupStockPhotos/uploads/13.jpg");*/
   background-image: url("images/background.jpg");
+  background-repeat: repeat;
   
 
 }
