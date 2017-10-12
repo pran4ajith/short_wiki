@@ -55,12 +55,12 @@ def result_view(request):
 '''
 def result_view(request):
     if request.method == 'POST':
-        search= request.POST.get('textfield') 
+        search= request.POST.get('textfield').encode("utf-8")
         
         print search
         try:
             try:
-                value = wikipedia.page(search.encode('utf-8'))
+                value = wikipedia.page(search)
                 title= value.title
                 url=value.url
                 print title
