@@ -8,6 +8,13 @@ from .forms import SearchForm
 import wikipedia
 from django.http import Http404
 
+import sys
+
+reload(sys)# for the utf character error
+sys.setdefaultencoding('utf-8')# Pokémon
+
+
+
 # Create your views here.
 '''
 def index(request):
@@ -55,7 +62,7 @@ def result_view(request):
 '''
 def result_view(request):
     if request.method == 'POST':
-        search = request.POST.get('textfield').encode("utf-8")
+        search = request.POST.get('textfield').encode("utf-8","replace")
         print search
 
         try:
